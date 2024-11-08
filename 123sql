@@ -1,0 +1,46 @@
+select * from emp;
+select * from dept;
+desc emp;
+select * from emp;
+select sal,deptno from emp;
+select distinct deptno from emp;
+select ename, sal, sal*12+comm, comm from emp;
+select ename, sal, sal*12+comm as 연봉, comm from emp;
+select * from emp order by sal;
+select * from emp order by sal desc;
+select * from emp order by deptno asc, sal desc;
+select * from emp where deptno = 30;
+select * from emp where ENAME >='F';
+select * from emp where sal !=3000;
+select * from emp where sal <>3000;
+select * from emp where not sal = 3000;
+-- Q1
+select * from emp where ename like '____S';
+-- Q2
+select * from emp where job = 'SALESMAN' and deptno = 30;
+-- Q3
+select * from emp where deptno in (20,30) and sal > 2000;
+select * from emp where deptno = 20 and sal > 2000
+union
+select * from emp where deptno = 30 and sal > 2000;
+-- Q4
+select * from emp where not sal >= 2000 and sal <= 3000;
+-- Q5
+select ename, empno, sal, deptno from emp where ename like '%E%' and deptno = 30 and sal not between 1000 and 2000;
+-- Q6
+select * from emp where ename not like '_L%' and comm is null and MGR is not null and job in ('MANAGER','CLERK');
+
+-- Q8-1
+select 
+deptno, d.dname,e.empno, e.ename, e.sal
+from emp e join dept d using (deptno)
+where sal > 2000
+order by deptno, EMPNO;
+-- Q8-1-2
+select 
+
+-- Q8-2
+-- Q8-3
+-- Q8-4
+-- Q8-5
+-- Q8-6
